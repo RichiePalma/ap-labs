@@ -35,22 +35,18 @@ Note that the answer must be a substring, `pwke` is a subsequence and not a subs
 
 Build Requirements
 ------------------
-```
-# Build Requirements here
-```
+It is a simple Python script, so no build requirements needed.
 
 
 How to build
 ------------
-```
-# instructions here
-```
+N/A
 
 
 How to Run
 ----------
 ```
-# instructions here
+python3 longestsub.py
 ```
 
 
