@@ -12,6 +12,30 @@ General instructions
 3. Use the  `generic_merge_sort.c` file for your code.
 4. Have fun and don't forget the next section.
 
+How to run
+---
+
+Run make to compile
+
+```
+# gcc -w generic_merge_sort.c -o generic_merge_sort
+make
+```
+
+The file sorts 3 arrays, the first one is the arguments it receives when running the binary. The other two are predefined within the code, one of numbers and another one of names. If no argument is given, it will print an empty array and a sorted empty array. 
+
+```
+./generic_merge_sort sort this words please
+Unsorted: sort this words please 
+Sorted: please sort this words 
+
+Unsorted: 234 125 1137 0 10 92 10 92 242 87 45 
+Sorted: 0 10 10 45 87 92 92 125 234 242 1137 
+
+Unsorted: Partida Humberto Cesar Ricardo Hector Juan 
+Sorted: Cesar Hector Humberto Juan Partida Ricardo 
+```
+
 
 How to submit your work
 =======================
