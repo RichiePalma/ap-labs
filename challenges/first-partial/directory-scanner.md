@@ -20,6 +20,25 @@ Requirements
 
 Sample Execution and output
 ---------------------------
+
+You can run the `Makefile` to build the go source code or to remove the binary.
+
+```
+# Compiles both the go and c source codes
+make
+
+# Removes both the go and c binaries
+make clean 
+
+# go build -o directory-scanner dir-scan.go 
+make go
+
+# rm -rf directory-scanner
+make rm-go
+```
+
+You could also use the `go run` command, but it is better to build the binary for one to be able to execute it as root. 
+
 ```
 $ ./directory-scanner /tmp
 Directory Scanner Tool
