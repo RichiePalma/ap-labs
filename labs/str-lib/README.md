@@ -18,6 +18,21 @@ New String          : originalVeryLongStringAddition
 SubString was found : yes
 ```
 
+How to compile
+---
+
+You can compile by running the Makefile which will link both c files into one binary. The parameter clean will delete such binary. 
+
+```
+# gcc main.c strlib.c -o main
+make
+
+# rm -rf main
+make clean
+```
+
+Note that an extra instruction was given during class. If the substring is found, the output has to indicate the position were the substring starts. Such position varies from 0 to NewStringLength-1. If the substring is found twice or more, it will only return the position of the first occurrence. 
+
 General instructions and advices
 --------------------------------
 0. Take a look on [Linking Process in C](http://talks.obedmr.com/hello-c-world/03-linking.slide#1) for a better undersanding.
