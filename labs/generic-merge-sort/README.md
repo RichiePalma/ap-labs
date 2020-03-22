@@ -20,20 +20,28 @@ Run make to compile
 ```
 # gcc -w generic_merge_sort.c -o generic_merge_sort
 make
+
+# Delete binary
+make clean
 ```
 
-The file sorts 3 arrays, the first one is the arguments it receives when running the binary. The other two are predefined within the code, one of numbers and another one of names. If no argument is given, it will print an empty array and a sorted empty array. 
+The c file sorts the arguments given. Such arguments could be Strings or Integers. If both integers and strings are passed, the MergeSort will sort the integers first then the strings.
 
 ```
+# Strings only
 ./generic_merge_sort sort this words please
 Unsorted: sort this words please 
 Sorted: please sort this words 
 
-Unsorted: 234 125 1137 0 10 92 10 92 242 87 45 
-Sorted: 0 10 10 45 87 92 92 125 234 242 1137 
+# Integers only
+./generic_merge_sort 1 4 2 5 3
+Unsorted: 1 4 2 5 3 
+Sorted: 1 2 3 4 5 
 
-Unsorted: Partida Humberto Cesar Ricardo Hector Juan 
-Sorted: Cesar Hector Humberto Juan Partida Ricardo 
+# Both strings and integers
+./generic_merge_sort sort this words please 1 4 2 5 3 
+Unsorted: sort this words please 1 4 2 5 3 
+Sorted: 1 2 3 4 5 please sort this words 
 ```
 
 
