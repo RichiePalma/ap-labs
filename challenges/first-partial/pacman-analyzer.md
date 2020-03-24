@@ -29,8 +29,28 @@ Sample execution and expected output file `packages_report.txt`
 
 **Note:** The following report is not containing real values from the original [`pacman.txt`](./pacman.txt) file. This is just an example. 
 
+First, compile the c file by executing the Makefile. You can also use this to erase the binary of such compiled file and the report text file.
+
+```
+# compiles the c, report text file and go file
+make
+
+# compiles only the c file
+make c
+
+# Erases both binaries and the report text file
+make clean
+
+# Erases only the c binary and the report text file
+make rm-c
+```
+
 ```
 $ ./pacman-analizer pacman.txt
+Generating Report from: [pacman.txt] log file
+Report is generated at: [packages_report.txt]
+
+$ cat packages_report.txt
 Pacman Packages Report
 ----------------------
 - Installed packages : 150
