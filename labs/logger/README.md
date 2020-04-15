@@ -26,6 +26,22 @@ General instructions
 - Don't forget to handle errors properly.
 - Coding best practices implementation will be also considered.
 
+How to run
+---
+
+First, build and link the c files by running the make command, then execute the `logger` binary.
+
+```
+# Link logger.c with testLogger.c
+make
+
+# Execute such compiled binary
+./logger
+
+# Delete binary
+make clean
+```
+
 How to submit your work
 =======================
 ```
