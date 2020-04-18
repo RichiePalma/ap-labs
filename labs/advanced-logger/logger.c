@@ -82,7 +82,7 @@ int warnf(const char *format, ...) {
   if (type == STDOUT) {
       textcolor (BRIGHT, YELLOW, HIDDEN);
       printf ("\nWARNING: ");
-      textcolor (RESET, YELLOW, HIDDEN);
+      textcolor(RESET, WHITE, HIDDEN);
       flag = vprintf (format, arg);
       va_end (arg);
       return flag;
@@ -103,7 +103,7 @@ int errorf(const char *format, ...) {
   if (type == STDOUT) {
       textcolor (BRIGHT, RED, HIDDEN);
       printf ("\nERROR: ");
-      textcolor (RESET, RED, HIDDEN);
+      textcolor(RESET, WHITE, HIDDEN);
       flag = vprintf (format, arg);
       va_end (arg);
       return flag;
@@ -124,7 +124,7 @@ int panicf(const char *format, ...) {
   if (type == STDOUT) {
       textcolor(BRIGHT, YELLOW, RED);
       printf ("\nsPANIC:");
-      textcolor (RESET, MAGENTA, HIDDEN);
+      textcolor(RESET, WHITE, HIDDEN);
       printf(" ");
       done = vprintf (format, arg);
       va_end (arg);
