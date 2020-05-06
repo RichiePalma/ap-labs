@@ -7,18 +7,33 @@
 package main
 
 import (
+	"flag"
+	"fmt"
 	"io"
 	"log"
 	"net"
 	"os"
+	"strings"
 )
 
 //!+
 func main() {
-	conn, err := net.Dial("tcp", "localhost:8000")
+	if(len(os.Args) < 5){
+		fmt.Println("Run as following: go run client.go -user <username> -server ip:port")
+		os.Exit(2)
+	}
+
+	user := flag.String("user", os.Args[2], "User Name String")
+	server := flag.String("server", os.Args[4], "Host address String")
+	flag.Parse()
+	conn, err := net.Dial("tcp", *server)
 	if err != nil {
 		log.Fatal(err)
 	}
+	if blank := strings.TrimSpace(*user) == ""; blank {
+		log.Panic("Username cannot be only a space")
+	}
+	io.WriteString(conn, "<user>"+*user+"\n")
 	done := make(chan struct{})
 	go func() {
 		io.Copy(os.Stdout, conn) // NOTE: ignoring errors
@@ -30,10 +45,9 @@ func main() {
 	<-done // wait for background goroutine to finish
 }
 
-//!-
-
 func mustCopy(dst io.Writer, src io.Reader) {
 	if _, err := io.Copy(dst, src); err != nil {
 		log.Fatal(err)
 	}
 }
+//!-
