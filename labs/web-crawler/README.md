@@ -12,6 +12,19 @@ General Requirements and Considerations
 - Coding best practices implementation will be also considered.
 
 
+Important note
+---
+
+Make sure to downloading and installing the github package by running the `go get` command. 
+
+```
+# The Make file can help you with it
+make
+
+# Or you can manually do it by running
+go get gopl.io/ch5/links
+```
+
 Test Cases
 ==========
 Your program will be tested with the following URLs:
